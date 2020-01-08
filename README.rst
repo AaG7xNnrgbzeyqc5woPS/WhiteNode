@@ -50,7 +50,8 @@ Build WhiteNode From within WhiteNode / Raspbian / Debian / Ubuntu
 WhiteNode can be built from Debian, Ubuntu, Raspbian, or even WhiteNode.
 Build requires about 2.5 GB of free space available.
 You can build it by issuing the following commands::
-
+    sudo apt-get install tmux vim tree nano 
+    sudo apt-get install git zip unzip lsof 
     sudo apt-get install realpath qemu-user-static
     
     git clone https://github.com/oizopower/CustomPiOS.git
