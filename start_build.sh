@@ -5,9 +5,9 @@
 #------------------------------------------------
 
 cd ~
-sudo apt-get install tmux vim tree nano
-sudo apt-get install git zip unzip lsof
-sudo apt-get install realpath qemu-user-static
+sudo apt-get install -y tmux vim tree nano
+sudo apt-get install -y git zip unzip lsof
+sudo apt-get install -y realpath qemu-user-static
 
 cd ~
 git clone https://github.com/AaG7xNnrgbzeyqc5woPS/CustomPiOS.git
