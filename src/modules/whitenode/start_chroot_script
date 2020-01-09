@@ -3,6 +3,12 @@
 # Written by Oizopower
 # GPL V3
 ########
+echo
+echo  -----------------------------------------------------------------------------------------------
+echo start_chroot_script for whitenode image.
+echo 
+echo ------------------------------------------------------------------------------------------------
+
 
 set -x
 set -e
@@ -22,26 +28,32 @@ apt-get upgrade -y
 crontab -l -u pi | echo "0 0 * * * sh /home/pi/scripts/backupwallet >/dev/null 2>&1" | crontab -u pi -
 
 #install needed files
-apt-get install -y ntp unzip zip git build-essential libdb-dev libdb++-dev libboost-all-dev libqrencode-dev miniupnpc libminiupnpc-dev zlib1g-dev pwgen libssl1.0-dev python-pip php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-intl nginx-light zip libgmp3-dev autoconf
+apt-get install -y ntp unzip zip git build-essential libdb-dev libdb++-dev 
+apt-get install -y libboost-atomic1.58-dev #libboost-all-dev , #fixed by john at 2020.1.9 
+apt-get install -y libqrencode-dev miniupnpc libminiupnpc-dev zlib1g-dev pwgen libssl1.0-dev python-pip 
+# apt-get install -y php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-cli php7.0-opcache php7.0-mbstring php7.0-xml php7.0-zip php7.0-intl 
+#   by john noted for jump
+
+apt-get install -y nginx-light zip libgmp3-dev autoconf
 
 # add latest blockchain files
-cd /home/pi/.whitecoin-xwc
-wget https://github.com/Whitecoin-org/xwc-blockchain/releases/download/latest/xwc-blockchain.zip
-/usr/bin/unzip xwc-blockchain.zip
-rm -f xwc-blockchain.zip
-chown -R pi.pi *
+# cd /home/pi/.whitecoin-xwc # commented by john for jump for test
+# wget https://github.com/Whitecoin-org/xwc-blockchain/releases/download/latest/xwc-blockchain.zip #commented by john for jump for test
+# /usr/bin/unzip xwc-blockchain.zip  # commented by john for jump for test
+# rm -f xwc-blockchain.zip  # commented by john for jump for test
+# chown -R pi.pi *  # commented by john for jump for test
 
 # set correct timezone
 pip install -U tzupdate
 
 #set config permissions
 sed -i 's,^\(user \).*,\1'pi\;',' /etc/nginx/nginx.conf
-sed -i 's,^\(user = \).*,\1'pi',' /etc/php/7.0/fpm/pool.d/www.conf
-sed -i 's,^\(group = \).*,\1'pi',' /etc/php/7.0/fpm/pool.d/www.conf
+# sed -i 's,^\(user = \).*,\1'pi',' /etc/php/7.0/fpm/pool.d/www.conf   # commented by john for jump for test
+# sed -i 's,^\(group = \).*,\1'pi',' /etc/php/7.0/fpm/pool.d/www.conf  # commented by john for jump for test
 
 #update startup scripts
 update-rc.d nginx defaults
-update-rc.d php7.0-fpm defaults
+# update-rc.d php7.0-fpm defaults  # commented by john for jump for test
 
 # Generate RPC first Boot
 chmod +x /home/pi/scripts/firstboot /home/pi/scripts/backupwallet
@@ -152,3 +164,11 @@ apt-get clean
 apt-get autoremove -y
 
 echo "ALL DONE !!!!";
+
+echo
+echo -----------------------------------------------------------------------------------------------
+echo  End start_chroot_script for whitenode image.
+echo  The End! 
+echo 
+echo ------------------------------------------------------------------------------------------------
+
