@@ -53,12 +53,9 @@ You can build it by issuing the following commands::
     sudo apt-get install tmux vim tree nano 
     sudo apt-get install git zip unzip lsof 
     sudo apt-get install realpath qemu-user-static
-    
-    #git clone https://github.com/oizopower/CustomPiOS.git
-    #git clone https://github.com/Whitecoin-org/WhiteNode.git
-    
-    git@github.com:AaG7xNnrgbzeyqc5woPS/CustomPiOS.git
-    git@github.com:AaG7xNnrgbzeyqc5woPS/WhiteNode.git
+  
+    git clone https://github.com/AaG7xNnrgbzeyqc5woPS/CustomPiOS.git
+    git clone https://github.com/AaG7xNnrgbzeyqc5woPS/WhiteNode.git
 
     cd WhiteNode/src/image
     wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspbian_lite_latest'
