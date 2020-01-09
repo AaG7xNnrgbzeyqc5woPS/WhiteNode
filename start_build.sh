@@ -1,3 +1,9 @@
+#usage:
+# wget https://raw.githubusercontent.com/AaG7xNnrgbzeyqc5woPS/WhiteNode/master/start_build.sh
+# chmod +x start_build.sh
+# start_build.sh
+#------------------------------------------------
+
 cd ~
 sudo apt-get install tmux vim tree nano
 sudo apt-get install git zip unzip lsof
