@@ -9,7 +9,8 @@ sudo apt-get install -y git zip unzip lsof
 sudo apt-get install -y realpath qemu-user-static
 
 cd ~
-git clone https://github.com/AaG7xNnrgbzeyqc5woPS/CustomPiOS.git
+#git clone https://github.com/AaG7xNnrgbzeyqc5woPS/CustomPiOS.git
+git clone https://github.com/Oizopower/CustomPiOS.git
 git clone https://github.com/AaG7xNnrgbzeyqc5woPS/WhiteNode.git
 
 cd WhiteNode/src/image
