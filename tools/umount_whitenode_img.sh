@@ -12,7 +12,7 @@
 # 程序需要root权限
 #-----------------------------------
 # usage2:
-# wget 
+# wget https://raw.githubusercontent.com/AaG7xNnrgbzeyqc5woPS/WhiteNode/master/tools/umount_whitenode_img.sh
 # chmod +x umount_whitenode_img.sh
 # umount_whitenode_img.sh mnt_path
 #-----------------------------------
