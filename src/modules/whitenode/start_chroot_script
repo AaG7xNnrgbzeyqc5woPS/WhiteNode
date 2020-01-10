@@ -142,7 +142,8 @@ mkdir -p /etc/nginx/ssl/
 openssl req -x509 -nodes -days 3650 -subj "/C=US/ST=Whitecoin/L=Whitecoin/O=Whitecoin/CN=whitenode.local" -newkey rsa:2048 -out /etc/nginx/ssl/whitenode.crt -keyout /etc/nginx/ssl/whitenode.key
 
 # clone whitecoin and compile
-git clone https://github.com/Whitecoin-org/whitecoin /opt/whitecoin
+#git clone https://github.com/Whitecoin-org/whitecoin /opt/whitecoin
+git clone https://github.com/peterli360/whitecoin-1 /opt/whitecoin
 cd /opt/whitecoin/src/ && make -f makefile.unix USE_UPNP=1
 
 # copy whitecoind to other place
