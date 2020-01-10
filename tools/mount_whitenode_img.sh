@@ -8,6 +8,14 @@
 # sudo ./mount_whitenode_image.sh img mnt 
 # need root 权限   
 
+#usage2:
+# wget https://raw.githubusercontent.com/AaG7xNnrgbzeyqc5woPS/WhiteNode/master/tools/mount_whitenode_img.sh && chmod +x mount_whitenode_img.sh
+# sudo ./mount_whitenode_img.sh img mnt
+#---------------------
+# 1. ${mnt}目录下创建两个子目录, fat, ext4, 用于挂载img文件的两个分区
+# 2. /dev/loop5 被全局使用, 必须未被其它镜像文件占用.所以使用本程序前,最好清除其它镜像.
+# 3. 需要 root权限 
+
 img=$1
 mnt=$2
 echo "Image Name: ${img}"
@@ -18,7 +26,7 @@ sudo mkdir -pv ${mnt}/ext4
 
 sudo losetup --show /dev/loop5 ${img}
 sudo kpartx -va /dev/loop5
-ls /dev/mapper
+sudo ls /dev/mapper
 sudo mount /dev/mapper/loop5p1 ${mnt}/fat
 sudo mount /dev/mapper/loop5p2 ${mnt}/ext4
 echo "${img} image is mounted at path ${mnt} now! "
