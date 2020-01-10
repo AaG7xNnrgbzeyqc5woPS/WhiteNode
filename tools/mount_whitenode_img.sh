@@ -41,4 +41,6 @@ sudo ls /dev/mapper
 sudo mount /dev/mapper/loop5p1 ${mnt}/fat
 sudo mount /dev/mapper/loop5p2 ${mnt}/ext4
 echo "${img} image is mounted at path ${mnt} now! "
-echo "Please ls ${mnt} for see this image file! 
+echo "Please ls ${mnt} for see this image file! "
+echo
+
