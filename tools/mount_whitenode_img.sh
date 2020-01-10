@@ -16,6 +16,16 @@
 # 1. ${mnt}目录下创建两个子目录, fat, ext4, 用于挂载img文件的两个分区
 # 2. /dev/loop5 被全局使用, 必须未被其它镜像文件占用.所以使用本程序前,最好清除其它镜像.
 # 3. 需要 root权限 
+#----------------------
+#依赖: bash mkdir sudo mount losetup kpartx 
+# ubuntu :
+# sudo apt-get update
+# sudo apt-get upgrade
+# sudo apt-get install -y kpartx
+# manjaro/arch:
+# sudo pacman -Syu
+# sudo pacman -S multipath-tools #multipath tools for linux(including kpartx)
+
 
 img=$1
 mnt=$2
