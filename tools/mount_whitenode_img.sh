@@ -9,7 +9,8 @@
 # need root 权限   
 
 #usage2:
-# wget https://raw.githubusercontent.com/AaG7xNnrgbzeyqc5woPS/WhiteNode/master/tools/mount_whitenode_img.sh && chmod +x mount_whitenode_img.sh
+# wget https://raw.githubusercontent.com/AaG7xNnrgbzeyqc5woPS/WhiteNode/master/tools/mount_whitenode_img.sh 
+# sudo chmod +x mount_whitenode_img.sh
 # sudo ./mount_whitenode_img.sh img mnt
 #---------------------
 # 1. ${mnt}目录下创建两个子目录, fat, ext4, 用于挂载img文件的两个分区
