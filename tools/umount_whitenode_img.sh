@@ -28,6 +28,7 @@ sudo ls /dev/mapper
 
 echo "2. now start umount ..."
 sudo umount ${mnt}/fat ${mnt}/ext4
+#sudo umount ${mnt}/{fat,ext4} #Other way
 echo "umount ok..."
 
 echo "3. now start mount_whitenode_img.sh"
