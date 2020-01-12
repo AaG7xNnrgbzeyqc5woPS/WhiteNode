@@ -26,6 +26,18 @@
 # sudo pacman -Syu
 # sudo pacman -S multipath-tools #multipath tools for linux(including kpartx)
 
+#-----------------------
+#已知bug:
+#1. 在ubuntu 16上 一次不能成功,需要执行两次.才行.
+# mount /dev/mapper/loop5p1 ${mnt}/fat 
+#mount /dev/mapper/loop5p2 ${mnt}/ext4
+#这两条指令会报错, loop5p1, loop5p2不存在,
+#sudo kpartx -va /dev/loop5命令不能成功,
+#估计有延时,不是等执行完成才返回.
+#2. manjaro上运行,没有问题.
+#3. 对应的 umount_whitenode_img.sh 没有问题
+# --------------------------------
+
 
 img=$1
 mnt=$2
