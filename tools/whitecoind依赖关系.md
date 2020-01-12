@@ -1,7 +1,9 @@
-分别使用 readelf whitecoind | gred "Shared"
-   ldd whitecoind
-   ldd -v whitecoind
- 三个命令生成的文件
+原oz版本: Whitecoin version v2.5.2.0 
+
+分别使用 readelf whitecoind | gred "Shared"  
+   ldd whitecoind  
+   ldd -v whitecoind   
+ 三个命令生成的文件   
  
 ```
 $cat whitecoind.shared_library.txt 
