@@ -95,6 +95,33 @@ return 0;
 $ ./a.out
 
 ```
+----------------------------------------------------------
+```
+
+$strings /lib/arm-linux-gnueabihf/libc.so.6 | grep GLIBC_
+GLIBC_2.4
+GLIBC_2.5
+GLIBC_2.6
+GLIBC_2.7
+GLIBC_2.8
+GLIBC_2.9
+GLIBC_2.10
+GLIBC_2.11
+GLIBC_2.12
+GLIBC_2.13
+GLIBC_2.14
+GLIBC_2.15
+GLIBC_2.16
+GLIBC_2.17
+GLIBC_2.18
+GLIBC_2.22
+GLIBC_2.23
+GLIBC_2.24
+GLIBC_PRIVATE
+
+```
+
+
 
 
 
